@@ -28,6 +28,7 @@ class FBeamer {
 		} = req.query.hub;
 
 		if(mode === 'subscribe' && verify_token === this.VERIFY_TOKEN) {
+			console.log('successs')
 			return res.end(challenge);
 		} else {
 			console.log("Could not register webhook!");
@@ -71,7 +72,7 @@ class FBeamer {
 			if(!error && JSON.parse(body).success) {
 				console.log("Subscribed to the page!");
 			} else {
-				console.log(error);
+				console.log('erorrr in subscribing ---',error);
 			}
 		});
 	}
@@ -79,6 +80,7 @@ class FBeamer {
 	incoming(req, res, cb) {
 		// Extract the body of the POST request
 		let data = req.body;
+		console.log('incominggggg -----')
 		if(data.object === 'page') {
 			// Iterate through the page entry Array
 			data.entry.forEach(pageObj => {
@@ -132,7 +134,7 @@ class FBeamer {
 		}
 
 		this.sendMessage(obj)
-			.catch(error => console.log(error));
+			.catch(error => console.log('errror in sending-------- ',error));
 	}
 
 	// Send an image message
