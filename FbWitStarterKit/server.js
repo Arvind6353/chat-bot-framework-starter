@@ -16,10 +16,10 @@ server.use(Restify.bodyParser());
 server.use((req, res, next) => f.verifySignature(req, res, next));
 
 // WIT.AI
-const Wit = require('node-wit').Wit;
-const wit = new Wit({
-	accessToken: config.WIT_ACCESS_TOKEN
-});
+// const Wit = require('node-wit').Wit;
+// const wit = new Wit({
+// 	accessToken: config.WIT_ACCESS_TOKEN
+// });
 
 // Register the webhooks
 server.get('/', (req, res, next) => {
