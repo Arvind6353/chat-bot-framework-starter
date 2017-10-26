@@ -35,7 +35,7 @@ server.post('/', (req, res, next) => {
 			postback,
 			message
 		} = msg;
-		console.log('message ',message.text )
+		console.log('sender ------->',sender )
 		if(message.text) {
 			// Process the message here
 			f.txt(sender, 'Hello echoing u back-- '+message.text)
