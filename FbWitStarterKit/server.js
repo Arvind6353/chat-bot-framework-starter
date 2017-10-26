@@ -38,7 +38,7 @@ server.post('/', (req, res, next) => {
 
 		if(message.text) {
 			// Process the message here
-			f.txt(sender, 'Hello echoing u back'+message)
+			f.txt(sender, 'Hello echoing u back'+message.text)
 		}
 
 	});
