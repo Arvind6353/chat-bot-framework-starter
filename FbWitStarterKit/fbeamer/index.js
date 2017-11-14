@@ -39,6 +39,7 @@ class FBeamer {
 	verifySignature(req, res, next) {
 		if(req.method === 'POST') {
 			let signature = req.headers['x-hub-signature'];
+			
 			try {
 				if(!signature) {
 					throw new Error("Signature missing!");
